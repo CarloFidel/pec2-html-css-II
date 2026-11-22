@@ -41,6 +41,11 @@
 # Icon must end with two \r
 Icon
 
+# .cursor
+.cursor/
+
+# documentos
+docs/
 
 # Thumbnails
 ._*
