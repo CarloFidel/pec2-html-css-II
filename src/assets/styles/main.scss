@@ -6,14 +6,19 @@
 /**
  * Import dependencies
  */
+@use "bootstrap";
 @use "dependencies";
+
+@use "fonts";
 
 /**
  * Import layouts
  * It's a best practice to use a different partial for each page
  */
 
-@use "layouts/home";
+@use "layouts/reset";
+@use "layouts/header";
+@use "layouts/footer";
 
 /**
  * Do NOT include anything else in this file!

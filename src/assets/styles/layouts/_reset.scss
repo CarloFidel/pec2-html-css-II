@@ -1,0 +1,75 @@
+@use "../variables";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. HTML y body */
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 2rem;
+    font-family: variables.$font-sans;
+    font-size: variables.$font-size-body;
+    line-height: variables.$line-height-body;
+    background-color: variables.$color-paper;
+    color: variables.$color-ink;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-family: variables.$font-serif;
+    font-weight: 300;
+  }
+  
+  a {
+    color: variables.$color-ink;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+

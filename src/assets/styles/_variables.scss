@@ -1,12 +1,96 @@
 @use "sass:color";
 
-$font-family-sans-serif:
-  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family-serif: "Georgia", "Times New Roman", serif;
+// =============================================================================
+// PALETA CROMÁTICA - ATELIER LITERARIO & CERTAMEN MUNICIPAL
+// =============================================================================
 
-$uoc-corporate: #000078;
-$uoc-masterbrand: #73edff;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+// Colores Primarios & Identidad Editorial
+$literary-primary: #7a1c30; // Carmín / Borgoña editorial principal
+$literary-primary-dark: #570f20; // Borgoña oscuro (hover, contrastes profundos)
+$literary-primary-light: #9b2d45; // Carmín vivo
+$literary-primary-soft: #fbf0f2; // Fondo sutil con tinte carmín
 
-$mqMinWidth: 420px;
+// Colores de Acento & Galardones
+$literary-accent-amber: #d97706; // Dorado / Ámbar envejecido (premios, sellos)
+$literary-accent-amber-light: #fef3c7; // Fondo para badges dorados
+$literary-accent-bronze: #b45309; // Tono bronce para menciones
+
+// Fondos & Superficies (Atmósfera papel / pergamino limpio)
+$literary-surface: #faf8f5; // Fondo global cálido papel
+$literary-card-bg: #fff; // Fondo tarjetas y formularios
+$literary-surface-subtle: #f4f1eb; // Fondos secundarios / cajas destacadas
+$literary-border: #e7e2d8; // Bordes sutiles orgánicos
+$literary-border-focus: #7a1c30; // Borde al enfocar inputs
+
+// Tipografía y Tintas
+$literary-ink-headline: #1e293b; // Negro tinta profundo (Slate 900)
+$literary-ink-body: #475569; // Gris lectura equilibrado (Slate 600)
+$literary-ink-muted: #64748b; // Metadatos, fechas y notas
+$literary-ink-light: #94a3b8; // Placeholders e iconos secundarios
+
+// Badges y Categorías Literarias
+$badge-novela-bg: #fef2f2;
+$badge-novela-color: #991b1b;
+$badge-poesia-bg: #fdf4ff;
+$badge-poesia-color: #86198f;
+$badge-talleres-bg: #eff6ff;
+$badge-talleres-color: #1e40af;
+$badge-jurado-bg: #fffbeb;
+$badge-jurado-color: #b45309;
+
+// =============================================================================
+// REASIGNACIÓN DE VARIABLES CORE BOOTSTRAP 5
+// =============================================================================
+
+$primary: $literary-primary !default;
+$secondary: $literary-accent-amber !default;
+$body-bg: $literary-surface !default;
+$body-color: $literary-ink-headline !default;
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", "Roboto", sans-serif !default;
+$font-family-serif: "Newsreader", "Georgia", "Times New Roman", serif !default;
+$font-family-base: $font-family-sans-serif !default;
+$font-size-base: 1rem !default;
+$line-height-base: 1.6 !default;
+$border-color: $literary-border !default;
+$border-radius-sm: 0.25rem !default;
+$border-radius: 0.5rem !default;
+$border-radius-lg: 0.75rem !default;
+$border-radius-xl: 1rem !default;
+$border-radius-pill: 50rem !default;
+$box-shadow-sm: 0 1px 3px rgb(30 41 59 / 5%) !default;
+$box-shadow: 0 4px 6px -1px rgb(30 41 59 / 7%), 0 2px 4px -2px rgb(30 41 59 / 4%) !default;
+$box-shadow-lg: 0 10px 15px -3px rgb(30 41 59 / 8%) !default;
+$btn-border-radius: $border-radius !default;
+$btn-font-weight: 600 !default;
+$btn-padding-y: 0.625rem !default;
+$btn-padding-x: 1.25rem !default;
+$card-bg: $literary-card-bg !default;
+$card-border-color: $literary-border !default;
+$card-border-radius: $border-radius-lg !default;
+$input-bg: #fff !default;
+$input-border-color: $literary-border !default;
+$input-focus-border-color: $literary-primary !default;
+$input-focus-box-shadow: 0 0 0 0.25rem color.change($literary-primary, $alpha: 0.15) !default;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": #198754,
+  "info": #0dcaf0,
+  "warning": #ffc107,
+  "danger": #dc3545,
+  "dark": $literary-ink-headline,
+  "light": $literary-surface,
+  "paper": $literary-surface-subtle,
+  "amber": $literary-accent-amber,
+) !default;
+
+// =============================================================================
+// TOKENS ESPECÍFICOS PARA REQUISITOS PEC
+// =============================================================================
+
+$flex-speakers-gap: 1.25rem;
+$flex-card-min-width: 280px;
+$cq-card-compact: 360px;
+$cq-card-expanded: 520px;
+
+@layer reset, framework, components, utilities;

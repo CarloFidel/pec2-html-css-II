@@ -1,36 +1,78 @@
 <!doctype html>
 
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
-    <!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
-  </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source
-          srcset="./assets/images/logo.png?as=webp&width=350"
-          type="image/webp"
-        />
-        <img
-          src="./assets/images/logo.png?width=350"
-          alt="Universitat Oberta de Catalunya"
-          class="uoc-logo"
-        />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+  <!-- do not remove this line! -->
+  <title>UOC Boilerplate</title>
+</head>
+
+<body>
+  <include src="./views/header.html"></include>
+
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">
+        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+        Jornadas literarias
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+        aria-controls="main-nav" aria-expanded="false" aria-label="Abrir el menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Portada</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script>
-    <!-- do not remove this line! -->
-  </body>
+  </nav>
+  <div class="uoc-container">
+    <picture>
+      <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
+      <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
+    </picture>
+    <h1 class="uoc-title">Hello, UOC!</h1>
+    <p>
+      This is a starter template for the Advanced HTML and CSS Tools courses
+      from the Master's Program in Multimedia Applications and the Master's
+      Program in Web App and Website Development at the Universitat Oberta de
+      Catalunya.
+    </p>
+    <p>
+      <a class="btn btn-primary" href="#inscripcion">
+        <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+        Inscripción
+      </a>
+    </p>
+    <div class="alert alert-primary" role="alert">
+      Se pueden añadir más ponentes cuando se publique el programa.
+    </div>
+    <article class="card text-start mb-4">
+      <div class="card-body">
+        <h2 class="card-title h5">Taller de relato</h2>
+        <p class="card-text">
+          Una sesión del concurso para probar el componente tarjeta de
+          Bootstrap.
+        </p>
+      </div>
+    </article>
+    <form id="inscripcion">
+      <div class="mb-3 text-start">
+        <label class="form-label" for="nombre">Nombre</label>
+        <input class="form-control" id="nombre" name="nombre" type="text" />
+      </div>
+      <button class="btn btn-primary" type="button">Enviar inscripción</button>
+    </form>
+  </div>
+  <include src="./views/footer.html"></include>
+  <script type="module" src="./assets/scripts/main.js"></script>
+  <!-- do not remove this line! -->
+</body>
+
 </html>
