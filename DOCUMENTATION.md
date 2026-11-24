@@ -94,7 +94,7 @@ Font Awesome 7.3.1 se importa en `src/assets/styles/_dependencies.scss` con `@im
 
 ## Decisiones de diseño y desarrollo
 
-Todavía no hay resultados que registrar en este apartado.
+La portada maqueta el póster en `.home-hero__poster`. Sin CSS Grid el bloque es una columna flex: antetítulo, título, cita y foto a todo el ancho. Dentro de `@supports (display: grid)` esas mismas piezas ocupan una sola columna de celdas con nombre (`kicker`, `title`, `quote`, `image`). El título sigue heredando el crema del fondo.
 
 ## Enlaces
 

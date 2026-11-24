@@ -3,7 +3,7 @@
 main {
   max-width: 90rem;
   margin: 0 auto;
-  padding: 1rem 0
+  padding: 1rem 0;
 }
 
 .home-hero {
@@ -13,21 +13,53 @@ main {
     h1 {
       color: inherit;
     }
+  }
 
-    &__subtitle {
-      font-size: 0.78rem;
-      color: variables.$literary-primary-light;
-    }
-
+  &__poster {
     img {
       aspect-ratio: 16 / 9;
     }
   }
 
-  &__cards {
-      max-width: 30rem;
+  &__title__subtitle {
+    font-size: 0.78rem;
+    color: variables.$literary-primary-light;
+  }
+
+  @supports (display: grid) {
+    &__poster {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "kicker"
+        "title"
+        "quote"
+        "image";
+      align-items: start;
     }
+
+    &__title__subtitle {
+      grid-area: kicker;
+    }
+
+    &__poster h1 {
+      grid-area: title;
+    }
+
     &__quote {
+      grid-area: quote;
+    }
+
+    &__poster img {
+      grid-area: image;
+    }
+  }
+
+  &__cards {
+    max-width: 30rem;
+  }
+
+  &__quote {
       font-family: variables.$font-family-serif;
       font-size: 0.85rem;
       font-weight: 500;
