@@ -3,7 +3,6 @@
  * see commented examples below
  */
 import * as bootstrap from "bootstrap";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 
 /**
  * Write any other JavaScript below

@@ -1,8 +1,39 @@
-<header class="site-header">
-    <a class="site-header__brand" href="#inicio">Una lectura</a>
-    <nav class="site-header__nav" aria-label="Secciones de la página">
-      <a class="site-header__link" href="#obra">LA OBRA</a>
-      <a class="site-header__link" href="#historia">LA HISTORIA</a>
-      <a class="site-header__link" href="#ficha">FICHA</a>
-    </nav>
-  </header>
+<header class="site-header flex-shrink-0">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid px-3 py-2">
+      <div class="container-fluid d-flex justify-content-between align-items-center gap-3">
+
+        <a class="navbar-brand site-header__brand d-flex align-items-center m-0" href="./index.html">
+          <span class="site-header__mark d-inline-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+          </span>
+          <span class="d-flex flex-column">
+            <span class="site-header__title">Palabras al Viento</span>
+            <span class="site-header__kicker text-uppercase">Jornadas literarias</span>
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir el menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      </div>
+      <div class="collapse navbar-collapse w-100" id="navbarNav">
+        <ul class="navbar-nav ms-lg-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ponentes y jurados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bases del Certamen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true">Concurso e inscripción</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

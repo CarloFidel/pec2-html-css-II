@@ -1,55 +1,42 @@
 @use "../variables";
-@use "../breakpoints";
 
 .site-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: variables.$space-sm;
-    background-color: variables.$color-paper;
-    border-bottom: 1px solid variables.$color-border;
-    
-    & a {
-        transition: color variables.$transition-actions-duration variables.$transition-actions-timing-function;
-    }
+  background-color: green;
+  background-color: variables.$literary-card-bg;
 
-    & a:hover {
-        text-decoration: none;
-        color: variables.$color-accent;
-     }
-
-    @include breakpoints.from(variables.$bp-tablet) {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-  
-  .site-header__nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: variables.$space-sm variables.$space-md;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  
-    @include breakpoints.from(variables.$bp-tablet) {
-      flex-wrap: nowrap;
-      gap: variables.$space-lg;
-    }
-  
-    a {
-      font-family: variables.$font-sans;
-      font-weight: 300;
-      font-size: variables.$font-size-kicker;
-    }
-  
-  }
-  
-  .site-header__brand {
-    font-family: variables.$font-serif;
-    font-weight: 300;
-    font-size: variables.$font-size-body * 1.5;
+  a:hover {
     text-decoration: none;
-    color: variables.$color-ink;
   }
+}
+
+.site-header__brand {
+  gap: 1rem;
+}
+
+.site-header__mark {
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background-color: variables.$badge-talleres-bg;
+  color: variables.$literary-primary;
+  font-size: 1.35rem;
+}
+
+.site-header__title {
+  font-family: variables.$font-family-serif;
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: variables.$literary-primary;
+}
+
+.site-header__kicker {
+  margin-top: 0.15rem;
+  font-family: variables.$font-family-sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  color: variables.$literary-ink-muted;
+}

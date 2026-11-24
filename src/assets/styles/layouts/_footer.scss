@@ -1,29 +1,161 @@
-@use "../variables";
 @use "../breakpoints";
+@use "../variables";
+
+body {
+  padding-bottom: 5.5rem;
+
+  @include breakpoints.from(992px) {
+    padding-bottom: 2rem;
+  }
+}
 
 .site-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: variables.$space-sm;
-  margin-top: auto;
-  border-top: 1px solid variables.$color-border;
-  padding: variables.$space-md;
-  text-align: center;
-
-  @include breakpoints.from(variables.$bp-tablet) {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  margin-top: 5rem;
+  a:hover {
+    text-decoration: none;
   }
 
-  &__note,
-  &__meta {
-    color: variables.$color-muted;
-    font-family: variables.$font-sans;
-    font-size: variables.$font-size-kicker;
+  &__bar {
+    padding: 0.4rem 0.25rem calc(0.4rem + env(safe-area-inset-bottom));
+    background-color: variables.$literary-card-bg;
+    border-top: 1px solid variables.$literary-border;
+    box-shadow: variables.$box-shadow;
+  }
+
+  &__tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.35rem 0.25rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: variables.$letter-spacing-kicker;
-    text-transform: uppercase;
+    line-height: 1.2;
+    color: variables.$literary-ink-muted;
+
+    i {
+      font-size: 1.15rem;
+    }
+
+    &.active {
+      color: variables.$literary-primary;
+    }
+  }
+
+  &__panel {
+    margin-bottom: -2rem;
+    padding: 4rem 0 1.25rem;
+    background-color: variables.$literary-card-bg;
+  }
+
+  &__title {
+    margin-bottom: 0.35rem;
+    font-family: variables.$font-family-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: variables.$literary-primary;
+  }
+
+  &__edition {
+    margin-bottom: 1rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: 0.08em;
+    color: variables.$literary-ink-muted;
+  }
+
+  &__lead {
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    line-height: variables.$line-height-base;
+    color: variables.$literary-ink-body;
+  }
+
+  &__partner {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    font-size: 0.82rem;
+    color: variables.$literary-ink-body;
+
+    i {
+      margin-top: 0.15rem;
+      color: variables.$literary-primary;
+    }
+  }
+
+  &__label {
+    margin-bottom: 0.85rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: variables.$literary-accent-amber;
+  }
+
+  &__link {
+    padding: 0.2rem 0;
+    font-size: 0.95rem;
+    color: variables.$literary-ink-headline;
+
+    &:hover {
+      color: variables.$literary-primary;
+    }
+  }
+
+  &__place {
+    margin-bottom: 0.75rem;
+    font-family: variables.$font-family-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: variables.$literary-ink-headline;
+  }
+
+  &__address {
+    margin-bottom: 0.85rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: variables.$literary-ink-body;
+  }
+
+  &__contact {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    padding: 0.15rem 0;
+    font-size: 0.85rem;
+    color: variables.$literary-ink-headline;
+
+    i {
+      width: 1rem;
+      margin-top: 0.15rem;
+      color: variables.$literary-ink-muted;
+    }
+
+    &:hover {
+      color: variables.$literary-primary;
+    }
+  }
+
+  &__legal {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid variables.$literary-border;
+  }
+
+  &__copy,
+  &__legal-link {
+    font-size: 0.78rem;
+    color: variables.$literary-ink-muted;
+  }
+
+  &__legal-link {
+    padding: 0.25rem 0.6rem 0.25rem 0;
+
+    &:hover {
+      color: variables.$literary-primary;
+    }
   }
 }
