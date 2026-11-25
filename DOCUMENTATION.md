@@ -94,7 +94,7 @@ Font Awesome 7.3.1 se importa en `src/assets/styles/_dependencies.scss` con `@im
 
 ## Decisiones de diseño y desarrollo
 
-La portada maqueta el póster en `.home-hero__poster`. Sin CSS Grid el bloque es una columna flex: antetítulo, título, cita y foto a todo el ancho. Dentro de `@supports (display: grid)` esas mismas piezas ocupan una sola columna de celdas con nombre (`kicker`, `title`, `quote`, `image`). El título sigue heredando el crema del fondo.
+La portada maqueta el póster en `.home-hero__poster`. Sin CSS Grid el bloque es una columna flex, en el orden del HTML: antetítulo, título, cita y foto a todo el ancho. Dentro de `@supports (display: grid)` las mismas piezas ocupan una sola columna, pero las celdas colocan la foto primero (`image`, `kicker`, `title`, `quote`). El título es un enlace a `ponentes.html` y sigue heredando el crema del fondo con `text-reset`.
 
 Hay seis fichas, cada una una `.card`. El orden interior es foto, cátedra, nombre, dos líneas de texto, horario y lugar. Esas dos últimas son texto suelto, sin fondo ni borde. `speakers__list` es flex con `flex-wrap` y `gap: 1rem`. Cada ítem ocupa el 100 %; desde `48rem` caben dos por fila y desde `72rem`, tres. El `flex-basis` resta el hueco. Cada `.speaker` es un contenedor (`container-type: inline-size`). Por debajo de `28rem` la foto va encima del texto; desde ese ancho, `@container` pone `.speaker__body` en fila y la foto pasa a `7rem`. Esas reglas están en `@layer components`. La proporción de la foto en columna es `aspect-ratio: 4 / 3`. Las seis fichas reutilizan `src/assets/images/speaker.jpeg`. El color y el espaciado de la ficha salen de utilidades de Bootstrap. El aviso bajo la retícula es `.alert` y `.alert-light`.
 

@@ -31,10 +31,10 @@ main {
       display: grid;
       grid-template-columns: 1fr;
       grid-template-areas:
+        "image"
         "kicker"
         "title"
-        "quote"
-        "image";
+        "quote";
       align-items: start;
     }
 
