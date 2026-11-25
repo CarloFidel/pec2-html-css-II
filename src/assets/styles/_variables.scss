@@ -59,4 +59,8 @@ $theme-colors: (
   "light": $literary-surface,
 ) !default;
 
+@function fluid($min, $max) {
+  @return clamp(#{$min}, 4vw, #{$max});
+}
+
 @layer reset, framework, components, utilities;

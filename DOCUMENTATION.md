@@ -59,7 +59,7 @@ De las metodologías del módulo, OOCSS separa estructura y piel en clases reuti
 
 ### Aplicación en el código
 
-Todavía no hay resultados que registrar en este apartado.
+En `src/ponentes.html` hay seis fichas. La lista es el bloque `speakers` (`speakers__list`) y cada ficha es el bloque `speaker`. Los elementos con nombre propio son `speaker__body`, `speaker__photo`, `speaker__kicker` y `speaker__name`. El horario y el lugar son dos líneas con icono de Font Awesome y la clase `.text-muted`. No hay modificador. La lista no usa `.row` ni `.col-*`. Bajo la lista, `.alert` dice que se pueden añadir más ponentes.
 
 ### Stylelint
 
@@ -95,6 +95,8 @@ Font Awesome 7.3.1 se importa en `src/assets/styles/_dependencies.scss` con `@im
 ## Decisiones de diseño y desarrollo
 
 La portada maqueta el póster en `.home-hero__poster`. Sin CSS Grid el bloque es una columna flex: antetítulo, título, cita y foto a todo el ancho. Dentro de `@supports (display: grid)` esas mismas piezas ocupan una sola columna de celdas con nombre (`kicker`, `title`, `quote`, `image`). El título sigue heredando el crema del fondo.
+
+Hay seis fichas, cada una una `.card`. El orden interior es foto, cátedra, nombre, dos líneas de texto, horario y lugar. Esas dos últimas son texto suelto, sin fondo ni borde. `speakers__list` es flex con `flex-wrap` y `gap: 1rem`. Cada ítem ocupa el 100 %; desde `48rem` caben dos por fila y desde `72rem`, tres. El `flex-basis` resta el hueco. Cada `.speaker` es un contenedor (`container-type: inline-size`). Por debajo de `28rem` la foto va encima del texto; desde ese ancho, `@container` pone `.speaker__body` en fila y la foto pasa a `7rem`. Esas reglas están en `@layer components`. La proporción de la foto en columna es `aspect-ratio: 4 / 3`. Las seis fichas reutilizan `src/assets/images/speaker.jpeg`. El color y el espaciado de la ficha salen de utilidades de Bootstrap. El aviso bajo la retícula es `.alert` y `.alert-light`.
 
 ## Enlaces
 

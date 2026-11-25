@@ -3,20 +3,159 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
-  <!-- do not remove this line! -->
-  <title>Ponentes</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <!-- do not remove this line! -->
+    <title>Ponentes</title>
 </head>
 
 <body>
-  <include src="./views/header.html"></include>
-  <main>
-    <include src="./views/footer.html"></include>
-  </main>
-  <script type="module" src="./assets/scripts/main.js"></script>
-  <!-- do not remove this line! -->
+    <include src="./views/header.html"></include>
+    <div class="page-scroll">
+        <main>
+            <section class="ponentes-hero d-flex flex-column align-items-center justify-content-center">
+                <h1>Ponentes</h1>
+                <span>Encuentros magistrales, coloquios abiertos y deliberación crítica con las voces más lúcidas de la
+                    narrativa contemporánea, la poesía hispánica y el arte editorial.</span>
+            </section>
+            <section class="speakers w-100 px-2" aria-labelledby="speakers-heading">
+                <h2 id="speakers-heading" class="visually-hidden">Fichas de ponentes</h2>
+                <ul class="speakers__list list-unstyled">
+                    <li>
+                        <article class="speaker card border-0 shadow-sm rounded-4 p-3 h-100">
+                            <div class="speaker__body">
+                            <img class="speaker__photo rounded-4" src="./assets/images/speaker.jpeg" alt="Retrato de Marcos Benítez" width="640" height="480">
+                            <div class="card-body px-1 pb-0">
+                                <p class="speaker__kicker text-secondary text-uppercase small fw-semibold mb-1">Cátedra de métrica y verso</p>
+                                <h3 class="speaker__name card-title text-primary mb-2">Marcos Benítez</h3>
+                                <p class="card-text mb-1">Recital sonoro y conferencia abierta: «La respiración del verso en el paisaje castellano».</p>
+                                <p class="card-text text-muted small mb-3">Ejercicios de poda sintáctica y resonancia…</p>
+                                <p class="small text-muted mb-1">
+                                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                                    Viernes 17, 16:00 h
+                                </p>
+                                <p class="small text-muted mb-0">
+                                    <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                                    Claustro de los Naranjos
+                                </p>
+                            </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="speaker card border-0 shadow-sm rounded-4 p-3 h-100">
+                            <div class="speaker__body">
+                            <img class="speaker__photo rounded-4" src="./assets/images/speaker.jpeg" alt="Retrato de Elena Varela" width="640" height="480">
+                            <div class="card-body px-1 pb-0">
+                                <p class="speaker__kicker text-secondary text-uppercase small fw-semibold mb-1">Novela contemporánea</p>
+                                <h3 class="speaker__name card-title text-primary mb-2">Elena Varela</h3>
+                                <p class="card-text mb-1">Lee el primer capítulo de su última novela.</p>
+                                <p class="card-text text-muted small mb-3">Una conversación sobre el narrador y el silencio.</p>
+                                <p class="small text-muted mb-1">
+                                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                                    Sábado 18, 11:00 h
+                                </p>
+                                <p class="small text-muted mb-0">
+                                    <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                                    Sala de los Espejos
+                                </p>
+                            </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="speaker card border-0 shadow-sm rounded-4 p-3 h-100">
+                            <div class="speaker__body">
+                            <img class="speaker__photo rounded-4" src="./assets/images/speaker.jpeg" alt="Retrato de Martín Soler" width="640" height="480">
+                            <div class="card-body px-1 pb-0">
+                                <p class="speaker__kicker text-secondary text-uppercase small fw-semibold mb-1">Poesía hispánica</p>
+                                <h3 class="speaker__name card-title text-primary mb-2">Martín Soler</h3>
+                                <p class="card-text mb-1">Diálogo sobre el verso libre y la métrica.</p>
+                                <p class="card-text text-muted small mb-3">Lectura de poemas inéditos del último ciclo.</p>
+                                <p class="small text-muted mb-1">
+                                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                                    Sábado 18, 13:00 h
+                                </p>
+                                <p class="small text-muted mb-0">
+                                    <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                                    Patio de las Higueras
+                                </p>
+                            </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="speaker card border-0 shadow-sm rounded-4 p-3 h-100">
+                            <div class="speaker__body">
+                            <img class="speaker__photo rounded-4" src="./assets/images/speaker.jpeg" alt="Retrato de Nuria Ceballos" width="640" height="480">
+                            <div class="card-body px-1 pb-0">
+                                <p class="speaker__kicker text-secondary text-uppercase small fw-semibold mb-1">Edición independiente</p>
+                                <h3 class="speaker__name card-title text-primary mb-2">Nuria Ceballos</h3>
+                                <p class="card-text mb-1">Cómo se construye un catálogo pequeño.</p>
+                                <p class="card-text text-muted small mb-3">Del manuscrito a la librería de barrio.</p>
+                                <p class="small text-muted mb-1">
+                                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                                    Sábado 18, 17:30 h
+                                </p>
+                                <p class="small text-muted mb-0">
+                                    <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                                    Biblioteca del Claustro
+                                </p>
+                            </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="speaker card border-0 shadow-sm rounded-4 p-3 h-100">
+                            <div class="speaker__body">
+                            <img class="speaker__photo rounded-4" src="./assets/images/speaker.jpeg" alt="Retrato de Andrés Quirós" width="640" height="480">
+                            <div class="card-body px-1 pb-0">
+                                <p class="speaker__kicker text-secondary text-uppercase small fw-semibold mb-1">Relato breve</p>
+                                <h3 class="speaker__name card-title text-primary mb-2">Andrés Quirós</h3>
+                                <p class="card-text mb-1">Taller de arranque, corte y final.</p>
+                                <p class="card-text text-muted small mb-3">Tres ejercicios a partir de un objeto.</p>
+                                <p class="small text-muted mb-1">
+                                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                                    Domingo 19, 10:30 h
+                                </p>
+                                <p class="small text-muted mb-0">
+                                    <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                                    Aula de escritura
+                                </p>
+                            </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="speaker card border-0 shadow-sm rounded-4 p-3 h-100">
+                            <div class="speaker__body">
+                            <img class="speaker__photo rounded-4" src="./assets/images/speaker.jpeg" alt="Retrato de Clara Ibáñez" width="640" height="480">
+                            <div class="card-body px-1 pb-0">
+                                <p class="speaker__kicker text-secondary text-uppercase small fw-semibold mb-1">Crítica literaria</p>
+                                <h3 class="speaker__name card-title text-primary mb-2">Clara Ibáñez</h3>
+                                <p class="card-text mb-1">La reseña como lectura, no como veredicto.</p>
+                                <p class="card-text text-muted small mb-3">Un recorrido por la poesía reciente.</p>
+                                <p class="small text-muted mb-1">
+                                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                                    Domingo 19, 12:30 h
+                                </p>
+                                <p class="small text-muted mb-0">
+                                    <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                                    Sala de actos
+                                </p>
+                            </div>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+                <div class="alert alert-light mt-4 mb-0" role="status">Se pueden añadir más ponentes.</div>
+            </section>
+        </main>
+        <include src="./views/footer.html"></include>
+    </div>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
 </body>
 
 </html>

@@ -1,11 +1,13 @@
 @use "../variables";
 
 .site-header {
-  background-color: green;
-  background-color: variables.$literary-card-bg;
+  background-color: rgba(243, 152, 152, 0.298);
+  backdrop-filter: blur(10px);
+
 
   a:hover {
     text-decoration: none;
+    color: variables.$literary-primary;
   }
 }
 
@@ -43,4 +45,8 @@
 
 .nav-link {
   font-size: 0.75rem;
+}
+
+.navbar {
+  background-color: transparent;
 }

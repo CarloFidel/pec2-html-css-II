@@ -22,7 +22,7 @@ main {
   }
 
   &__title__subtitle {
-    font-size: 0.78rem;
+    font-size: variables.fluid(0.78rem, 0.78rem);
     color: variables.$literary-primary-light;
   }
 
