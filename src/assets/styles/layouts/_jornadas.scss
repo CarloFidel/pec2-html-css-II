@@ -1,0 +1,140 @@
+@use "../variables";
+
+@mixin jornadas-cover-image {
+    max-height: 50vh;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+@mixin jornadas-image-frame {
+    overflow: hidden;
+    border-radius: variables.$border-radius-xl;
+    box-shadow:
+        0 1.25rem 2.5rem rgb(30 41 59 / 22%),
+        0 0.5rem 1.25rem rgb(110 46 60 / 14%);
+}
+
+.main-jornadas {
+    width: 100%;
+    max-width: 90rem;
+    padding: 1rem 0;
+    margin: 0 auto;
+}
+
+.title-section {
+    position: relative;
+    align-items: center;
+    text-align: center;
+
+    &__image {
+        @include jornadas-image-frame;
+
+        img {
+            @include jornadas-cover-image;
+
+            opacity: 60%;
+        }
+    }
+
+    &__content {
+        text-align: center;
+        pointer-events: none;
+    }
+}
+
+.article {
+    &__lead {
+        max-width: 100%;
+        padding: 0 0.5rem;
+        margin: 0 auto;
+
+        @media (width >= 48rem) {
+            max-width: 80%;
+            text-align: center;
+        }
+    }
+
+    &__steps-wrap {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__steps {
+        max-width: 100%;
+        padding: 2rem;
+        border: 1px solid variables.$literary-border;
+        border-radius: 2rem;
+        box-shadow: variables.$literary-shadow-lg;
+
+        @media (width >= 48rem) {
+            max-width: 70%;
+            padding: 3rem;
+        }
+    }
+
+    &__author {
+        letter-spacing: 0.08em;
+    }
+
+    &__highlight {
+        max-width: 100%;
+        margin: 0 auto;
+
+        @media (width >= 48rem) {
+            max-width: 75%;
+        }
+
+        .article__quote {
+            max-width: 28rem;
+            font-size: 0.8125rem;
+        }
+    }
+
+    &__figure-photo {
+        @include jornadas-image-frame;
+
+        width: 100%;
+        margin-bottom: 0.5rem;
+
+        img {
+            @include jornadas-cover-image;
+        }
+    }
+}
+
+@layer components {
+    .article img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .article__figure {
+        container-type: inline-size;
+    }
+
+    .article figure:has(figcaption) {
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid variables.$literary-primary;
+    }
+
+    .article :is(h2, h3) {
+        font-family: variables.$font-family-serif;
+    }
+
+    .article__step-badge {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.875rem;
+    }
+
+    @container (width >= 40rem) {
+        .article__figure {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+
+    }
+}

@@ -1,18 +1,24 @@
 @use "../variables";
 
+.main-speakers {
+    max-width: 90rem;
+    padding: 1rem 0;
+    margin: 0 auto;
+  }
+  
 
 .ponentes-hero {
-    text-align: center;
     justify-content: center;
     padding: 0.5rem;
+    text-align: center;
 
     &__title {
         color: variables.$literary-primary-soft;
     }
 
     &__subtitle {
-        color: variables.$literary-primary-light;
         font-size: variables.fluid(0.78rem, 0.78rem);
+        color: variables.$literary-primary-light;
     }
 
     &__image {
@@ -26,8 +32,8 @@
     .speakers__list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         gap: 1rem;
+        justify-content: center;
     }
 
     .speakers__list > li {
@@ -46,8 +52,8 @@
     }
 
     .speaker {
-        container-type: inline-size;
         width: 100%;
+        container-type: inline-size;
     }
 
     .speaker__body {
@@ -69,10 +75,10 @@
         }
 
         .speaker__photo {
+            flex-shrink: 0;
             width: 7rem;
             height: 7rem;
             aspect-ratio: 1;
-            flex-shrink: 0;
         }
     }
 }

@@ -14,6 +14,33 @@
   <include src="./views/header.html"></include>
   <div class="page-scroll">
     <main>
+      <section class="contact d-flex flex-column align-items-center justify-content-center px-3 py-5 py-lg-4">
+        <div class="contact__intro text-center mb-4">
+          <h1 class="h2 fw-semibold text-primary mb-2">Concurso e inscripción</h1>
+          <p class="mb-0 col-lg-8 mx-auto">Envíe el manuscrito o consulte plazos con la secretaría del certamen. Los
+            campos marcados son obligatorios.</p>
+        </div>
+        <form class="contact__form container-sm w-100" name="inscripcion" method="post" action="./contacto.html"
+          data-netlify="true" netlify>
+          <input type="hidden" name="form-name" value="inscripcion" />
+          <div class="contact__fields">
+            <div>
+              <label class="form-label" for="contact-name">Nombre y apellidos</label>
+              <input class="form-control" type="text" id="contact-name" name="nombre" autocomplete="name" required />
+            </div>
+            <div>
+              <label class="form-label" for="contact-email">Correo electrónico</label>
+              <input class="form-control" type="email" id="contact-email" name="correo" autocomplete="email"
+                required />
+            </div>
+            <div class="contact__field--full">
+              <label class="form-label" for="contact-message">Mensaje o sinopsis breve</label>
+              <textarea class="form-control" id="contact-message" name="mensaje" rows="5" required></textarea>
+            </div>
+          </div>
+          <button class="btn btn-primary mt-4 w-100 w-sm-auto" type="submit">Enviar solicitud</button>
+        </form>
+      </section>
     </main>
     <include src="./views/footer.html"></include>
   </div>

@@ -32,6 +32,7 @@ También se han instalado, como dependencias de desarrollo:
 - `stylelint` 18.1.0
 - `stylelint-scss` 7.5.0
 - `stylelint-config-standard-scss` 18.0.0
+- `stylelint-config-recess-order` 7.10.2
 
 ### Entorno de desarrollo
 
@@ -41,11 +42,13 @@ Se ha ejecutado `npm run dev`. Parcel sirve el proyecto en el puerto 8123. En es
 
 ### Compilación para producción
 
-Se ha ejecutado `npm run build`. La primera compilación ha avisado de que silenciar la deprecación `mixed-decls` ya no procede. Se ha quitado esa clave de `.sassrc.js` y se han mantenido `import`, `color-functions` y `global-builtin`. La compilación siguiente ha terminado sin avisos de Sass y ha generado `dist/`, con el HTML, el CSS, el JavaScript y las fuentes de Font Awesome.
+Se ha ejecutado `npm run build`. La primera compilación ha avisado de que silenciar la deprecación `mixed-decls` ya no procede. Se ha quitado esa clave de `.sassrc.js` y se han mantenido `import`, `color-functions` y `global-builtin`. Antes de Parcel, el script lanza Stylelint sobre `src/**/*.scss`.
+
+La última compilación ha terminado sin avisos de Sass y ha generado `dist/` con cuatro HTML (`index.html`, `ponentes.html`, `jornadas.html` y `contacto.html`), un CSS bundled, JavaScript, fuentes locales y las fuentes de Font Awesome.
 
 ### Publicación
 
-Todavía no se ha creado un repositorio propio ni un sitio en Netlify. Los enlaces se añaden en el apartado final cuando existan.
+El remoto de Git apunta a un repositorio propio en GitHub. El sitio en Netlify y la prueba del formulario con atributo `netlify` quedan pendientes hasta configurar el deploy.
 
 ## Metodología y guía de estilo
 
@@ -61,9 +64,11 @@ De las metodologías del módulo, OOCSS separa estructura y piel en clases reuti
 
 En `src/ponentes.html` hay seis fichas. La lista es el bloque `speakers` (`speakers__list`) y cada ficha es el bloque `speaker`. Los elementos con nombre propio son `speaker__body`, `speaker__photo`, `speaker__kicker` y `speaker__name`. El horario y el lugar son dos líneas con icono de Font Awesome y la clase `.text-muted`. No hay modificador. La lista no usa `.row` ni `.col-*`. Bajo la lista, `.alert` dice que se pueden añadir más ponentes.
 
+En `src/jornadas.html` el bloque es `article`. Los elementos son `article__author`, `article__lead`, `article__steps-wrap`, `article__steps`, `article__step-badge`, `article__highlight`, `article__quote`, `article__figure`, `article__figure-photo` y `article__caption`. Los estilos de página viven en `src/assets/styles/layouts/_jornadas.scss`. En `src/contacto.html` el bloque es `contact`, con `contact__intro`, `contact__form`, `contact__fields` y `contact__field--full`. El formulario usa las clases de Bootstrap `.form-label`, `.form-control` y `.btn`.
+
 ### Stylelint
 
-Se ha creado `.stylelintrc` en la raíz. El módulo 2 pide ese nombre de fichero. La configuración extiende `stylelint-config-standard-scss`, que ya incorpora `stylelint-scss`.
+Se ha creado `.stylelintrc` en la raíz. El módulo 2 pide ese nombre de fichero. La configuración extiende `stylelint-config-standard-scss`, que ya incorpora `stylelint-scss`, y `stylelint-config-recess-order`, que ordena las propiedades según la Code Guide de @mdo.
 
 La regla que aplica BEM es `selector-class-pattern`, con la expresión del módulo: `^.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$`. No se ha dejado en `null`: el enunciado pide que Stylelint vigile el criterio elegido, y las clases de Bootstrap viven en el HTML y en `node_modules`, fuera de esta orden. Una clase como `.site-header__nav` cumple el patrón; una clase de una sola palabra también, porque el elemento y el modificador son opcionales.
 
@@ -76,7 +81,7 @@ Para las técnicas del módulo 3 se mantienen estas reglas:
 
 No se han desactivado `scss/dollar-variable-pattern`, `custom-property-pattern` ni `scss/at-mixin-pattern`. Las variables del proyecto ya usan guiones (`$literary-primary`) y esas reglas no chocan con Bootstrap.
 
-Los scripts son `stylelint`, `lint:css` y `lint`. Los tres ejecutan `stylelint "src/**/*.scss"`, la carpeta real de los estilos. `npm run build` lanza Stylelint antes de Parcel. `npm run stylelint` ha terminado sin mensajes. Para llegar a ese resultado se han corregido espacios tras los dos puntos en `_variables.scss`, el color `#ffffff`, la sombra de `_home.scss` y el prefijo `-webkit-text-size-adjust` de `_reset.scss`.
+Los scripts son `stylelint`, `lint:css` y `lint`. Los tres ejecutan `stylelint "src/**/*.scss"`, la carpeta real de los estilos. `npm run build` lanza Stylelint antes de Parcel. Se ha ejecutado `npm run stylelint` tras añadir `stylelint-config-recess-order` y ha terminado sin mensajes.
 
 ## Dependencias
 
@@ -86,7 +91,7 @@ Bootstrap 5.3.9 se carga desde Sass, no desde el CSS ya compilado. `_dependencie
 
 `_variables.scss` define la paleta que usa la portada (`$literary-primary` `#6e2e3c`, superficies, tintas y el par `$badge-talleres-bg` / `$badge-talleres-color`) y, antes de importar Bootstrap, reasigna `$primary`, `$secondary`, `$body-bg`, `$body-color`, `$font-family-sans-serif`, `$font-family-serif`, `$font-family-base`, `$font-size-base`, `$line-height-base`, `$border-color`, `$border-radius`, `$border-radius-lg`, `$border-radius-xl`, `$box-shadow`, `$box-shadow-sm`, `$btn-border-radius`, `$btn-font-weight`, `$btn-padding-y`, `$btn-padding-x`, `$card-bg`, `$card-border-color`, `$card-border-radius` y `$theme-colors`. En ese mapa el primario es `$literary-primary` y el secundario es el ámbar. Se conservan `success`, `info`, `warning` y `danger`. El orden de capas se declara con `@layer reset, framework, components, utilities`. Bootstrap no entra en esas capas. Inter y Newsreader se cargan con `@font-face` en `src/assets/styles/_fonts.scss`, importado desde `main.scss`. `$font-family-base` aplica Inter al texto y `$headings-font-family` aplica Newsreader a los títulos de Bootstrap.
 
-En `src/index.html` se comprueban cinco componentes: navbar (con `navbar-toggler` y `data-bs-toggle="collapse"`), botón (`.btn` y `.btn-primary`), alerta (`.alert`), tarjeta (`.card`) y formulario (`.form-label` y `.form-control`). Esta página es temporal: el reparto definitivo entre portada, ponentes, artículo y contacto se hace cuando existan esas páginas. La retícula de ponentes no usa `.row` ni `.col-*`.
+En `src/index.html` se comprueban navbar (con `navbar-toggler` y `data-bs-toggle="collapse"`), botón (`.btn` y `.btn-primary`) y tarjeta (`.card`). En ponentes, la ficha es `.card` y el aviso es `.alert`. El formulario (`.form-label`, `.form-control` y `.btn`) está en `src/contacto.html`. La retícula de ponentes no usa `.row` ni `.col-*`.
 
 ### Otra dependencia
 
@@ -96,9 +101,13 @@ Font Awesome 7.3.1 se importa en `src/assets/styles/_dependencies.scss` con `@im
 
 La portada maqueta el póster en `.home-hero__poster`. Sin CSS Grid el bloque es una columna flex, en el orden del HTML: antetítulo, título, cita y foto a todo el ancho. Dentro de `@supports (display: grid)` las mismas piezas ocupan una sola columna, pero las celdas colocan la foto primero (`image`, `kicker`, `title`, `quote`). El título es un enlace a `ponentes.html` y sigue heredando el crema del fondo con `text-reset`. `.home-hero__poster` es un contenedor (`container-type: inline-size`). El `h1` mide `1.75rem` y, desde `32rem` de ancho del póster, `2.75rem`.
 
-Hay seis fichas, cada una una `.card`. El orden interior es foto, cátedra, nombre, dos líneas de texto, horario y lugar. Esas dos últimas son texto suelto, sin fondo ni borde. `speakers__list` es flex con `flex-wrap` y `gap: 1rem`. Cada ítem ocupa el 100 %; desde `48rem` caben dos por fila y desde `72rem`, tres. El `flex-basis` resta el hueco. Cada `.speaker` es un contenedor (`container-type: inline-size`). Por debajo de `28rem` la foto va encima del texto; desde ese ancho, `@container` pone `.speaker__body` en fila y la foto pasa a `7rem`. Esas reglas están en `@layer components`. La proporción de la foto en columna es `aspect-ratio: 4 / 3`. Las seis fichas reutilizan `src/assets/images/speaker.jpeg`. El color y el espaciado de la ficha salen de utilidades de Bootstrap. El aviso bajo la retícula es `.alert` y `.alert-light`.
+Hay seis fichas, cada una una `.card`. El orden interior es foto, cátedra, nombre, dos líneas de texto, horario y lugar. Esas dos últimas son texto suelto, sin fondo ni borde. `speakers__list` es flex con `flex-wrap` y `gap: 1rem`. Cada ítem ocupa el 100 %; desde `48rem` caben dos por fila y desde `72rem`, tres. El `flex-basis` resta el hueco. Cada `.speaker` es un contenedor (`container-type: inline-size`). Por debajo de `28rem` la foto va encima del texto; desde ese ancho, `@container` pone `.speaker__body` en fila y la foto pasa a `7rem`. Esas reglas están en `@layer components`. La proporción de la foto en columna es `aspect-ratio: 4 / 3`. Cada ficha usa una imagen distinta (`speaker_01.jpeg` a `speaker_05.jpeg` y `speaker.jpeg`). El color y el espaciado de la ficha salen de utilidades de Bootstrap. El aviso bajo la retícula es `.alert` y `.alert-light`.
+
+La página del artículo abre con la foto `jornadas.jpeg`, el título «Jornadas» y el nombre de la autora en `article__author`. El titular y el primer párrafo van en fila desde el breakpoint `md` de Bootstrap y en columna por debajo. Hay cuatro ítems en la lista con marcador `article__step-badge`, una cita, varios párrafos y una segunda foto, `book_01.jpeg`, dentro de `<figure>` con `<figcaption>`. La figura del cuerpo lleva pie y recibe borde inferior con `figure:has(figcaption)`. `:is(h2, h3)` aplica la serif del proyecto. `.article__figure` es contenedor. Por debajo de `40rem` el pie queda bajo la foto; desde ese ancho la figura pasa a fila. Las imágenes del artículo llevan `max-width: 100%`. Esas reglas están en `@layer components`.
+
+La página de contacto es la sección `.contact`, con `min-height: 100svh`, fondo `oklch(96% 0.02 80deg)` y texto `oklch(28% 0.04 30deg)`. El formulario tiene los campos nombre, correo y mensaje, los atributos `data-netlify` y `netlify`, `method="post"`, `action="./contacto.html"` y un `name` en cada control (`nombre`, `correo`, `mensaje`). Los campos nombre y correo ocupan dos columnas desde `32rem` de ancho del formulario gracias al container query en `.contact__form`; el mensaje usa `contact__field--full` a ancho completo. Los controles tienen altura mínima para facilitar el toque en móvil.
 
 ## Enlaces
 
-- Repositorio de GitHub: pendiente.
+- Repositorio de GitHub: https://github.com/CarloFidel/pec2-html-css-II
 - Sitio público en Netlify: pendiente.

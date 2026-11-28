@@ -1,9 +1,9 @@
 @use "../variables";
 
-main {
+.main-home {
   max-width: 90rem;
-  margin: 0 auto;
   padding: 1rem 0;
+  margin: 0 auto;
 }
 
 .home-hero {
@@ -41,12 +41,12 @@ main {
   @supports (display: grid) {
     &__poster {
       display: grid;
-      grid-template-columns: 1fr;
       grid-template-areas:
         "image"
         "kicker"
         "title"
         "quote";
+      grid-template-columns: 1fr;
       align-items: start;
     }
 
@@ -72,18 +72,21 @@ main {
   }
 
   &__quote {
+      margin-top: 1rem;
       font-family: variables.$font-family-serif;
       font-size: 0.85rem;
+      font-style: italic;
       font-weight: 500;
       line-height: 1.2;
-      font-style: italic;
       color: variables.$literary-ink-light;
-      margin-top: 1rem;
     }
 
   &__card {
     max-width: 13rem;
     max-height: 13rem;
+    box-shadow:
+      0 0.65rem 1.5rem rgb(30 41 59 / 14%),
+      0 0.2rem 0.6rem rgb(110 46 60 / 10%);
   }
 
   &__icon {

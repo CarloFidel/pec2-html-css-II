@@ -1,0 +1,33 @@
+.contact {
+  min-height: 100svh;
+  color: oklch(28% 0.04 30deg);
+  background-color: oklch(96% 0.02 80deg);
+}
+
+.contact__form {
+  max-width: 36rem;
+  container-type: inline-size;
+}
+
+.contact__fields {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact__field--full {
+  grid-column: 1 / -1;
+}
+
+.contact .form-control {
+  min-height: 2.75rem;
+}
+
+.contact textarea.form-control {
+  min-height: 8rem;
+}
+
+@container (width >= 32rem) {
+  .contact__fields {
+    grid-template-columns: 1fr 1fr;
+  }
+}

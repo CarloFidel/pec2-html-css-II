@@ -13,7 +13,112 @@
 <body>
   <include src="./views/header.html"></include>
   <div class="page-scroll">
-    <main>
+    <main class="main-jornadas w-100">
+      <section
+        class="title-section d-flex flex-column align-items-center justify-content-start flex-grow-1 w-100 text-center px-2 text-muted">
+        <div class="title-section__image w-100">
+          <img class="img-fluid w-100" src="./assets/images/jornadas.jpeg"
+            alt="Claustro barroco durante las jornadas literarias.">
+        </div>
+        <div
+          class="title-section__content position-absolute top-0 start-0 end-0 bottom-0 d-flex flex-column justify-content-center align-items-center px-3">
+          <h1 class="display-1 text-primary fw-bold mb-2">Jornadas</h1>
+          <p class="article__author small text-uppercase fw-semibold mb-0 text-body-secondary">Por Elena Montoya</p>
+        </div>
+      </section>
+
+      <article class="article container px-2 pb-4">
+        <hr class="border-secondary-subtle my-4">
+
+        <div class="article__lead row g-4 align-items-start ">
+          <div class="col-md-5">
+            <h2 class="display-6 fw-semibold lh-sm text-primary mb-0">Un fin de semana de lecturas compartidas</h2>
+          </div>
+          <div class="col-md-7">
+            <p class="mb-0 text-body-secondary">Las jornadas concentran recitales, talleres y el fallo del certamen en
+              el claustro. El público entra y sale durante los tres días del fin de semana; el programa indica hora,
+              sala y aforo de cada actividad. Parte de las sesiones se graba para el archivo municipal, y el lunes
+              siguiente queda abierta la consulta de materiales con cita previa en la sede.</p>
+          </div>
+        </div>
+
+        <hr class="border-secondary-subtle my-4">
+        <div class="article__steps-wrap d-flex justify-content-center align-items-center">
+          <ol class="article__steps list-unstyled d-flex flex-column gap-4 mb-0 w-100">
+            <li class="d-flex gap-3">
+              <span
+                class="article__step-badge badge rounded-circle border border-primary text-primary bg-transparent d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                aria-hidden="true">1</span>
+              <div>
+                <h3 class="h6 fw-semibold text-primary mb-1">Viernes de apertura</h3>
+                <p class="mb-0 text-body-secondary">Recital inaugural en el claustro, con lectura de textos de ediciones
+                  anteriores y bienvenida al público. A continuación se presenta el jurado del certamen y se repasan las
+                  bases de participación, los plazos de entrega y el calendario de actividades del fin de semana.</p>
+              </div>
+            </li>
+            <li class="d-flex gap-3">
+              <span
+                class="article__step-badge badge rounded-circle border border-primary text-primary bg-transparent d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                aria-hidden="true">2</span>
+              <div>
+                <h3 class="h6 fw-semibold text-primary mb-1">Sábado de talleres</h3>
+                <p class="mb-0 text-body-secondary">Sesiones de relato breve con cupo limitado, repartidas entre la
+                  mañana y la tarde. Cada taller trabaja un borrador en grupo reducido y termina con una lectura
+                  comentada por la persona facilitadora y el resto de participantes.</p>
+              </div>
+            </li>
+            <li class="d-flex gap-3">
+              <span
+                class="article__step-badge badge rounded-circle border border-primary text-primary bg-transparent d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                aria-hidden="true">3</span>
+              <div>
+                <h3 class="h6 fw-semibold text-primary mb-1">Domingo de fallo</h3>
+                <p class="mb-0 text-body-secondary">Lectura pública de los relatos premiados, con intervención breve del
+                  jurado sobre los criterios de valoración. El acto cierra la edición y recoge las fechas de publicación
+                  del anuario y de las grabaciones que quedarán disponibles en el archivo municipal.</p>
+              </div>
+            </li>
+            <li class="d-flex gap-3">
+              <span
+                class="article__step-badge badge rounded-circle border border-primary text-primary bg-transparent d-inline-flex align-items-center justify-content-center flex-shrink-0"
+                aria-hidden="true">4</span>
+              <div>
+                <h3 class="h6 fw-semibold text-primary mb-1">Lunes de archivo</h3>
+                <p class="mb-0 text-body-secondary">Apertura de la consulta de materiales en la sede municipal: actas
+                  resumidas, fotografías del claustro y copias autorizadas de las lecturas. La cita previa se gestiona
+                  por correo y el horario de atención se publica junto con el programa de la edición siguiente.</p>
+              </div>
+            </li>
+          </ol>
+
+        </div>
+
+        <hr class="border-secondary-subtle my-4">
+
+        <div class="article__highlight text-center rounded-4 px-3 px-md-4 py-4 py-md-5">
+          <h2 class="display-5 fw-semibold lh-sm text-primary mb-4">El relato breve cabe en un fin de semana</h2>
+          <blockquote class="article__quote small fst-italic lh-sm text-body-secondary mb-4 mx-auto">«Donde las palabras
+            cobran vida y el silencio del claustro las escucha.»</blockquote>
+          <p class="text-body-secondary mb-3">La inscripción al certamen es gratuita y abierta hasta el viernes de la
+            semana previa. Cada persona presenta un solo relato inédito, escrito en castellano, con extensión máxima de
+            tres mil palabras y sin firma en el archivo entregado. El jurado valora la originalidad, la claridad del
+            estilo y la coherencia del desenlace.</p>
+          <p class="text-body-secondary mb-0">El archivo municipal conserva las grabaciones y los anuarios de ediciones
+            anteriores. Pueden consultarse en la sede, con cita previa por correo, en horario de tarde. Parte de ese
+            material se reproduce durante el recital de apertura para enlazar la memoria del certamen con cada nueva
+            convocatoria.</p>
+        </div>
+
+        <figure class="article__figure my-4 mb-0">
+          <div class="article__figure-photo">
+            <img class="img-fluid w-100" src="./assets/images/book_01.jpeg"
+              alt="Libro abierto sobre una mesa de lectura.">
+          </div>
+          <figcaption class="article__caption small text-muted mt-2">Mesa de lectura del sábado en la biblioteca del
+            palacio.</figcaption>
+        </figure>
+      </article>
+
     </main>
     <include src="./views/footer.html"></include>
   </div>
